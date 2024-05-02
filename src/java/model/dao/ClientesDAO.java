@@ -109,6 +109,26 @@ public class ClientesDAO {
             e.printStackTrace();
         }
     }
-     
+   public ClientesDTO buscarLogin(ClientesDTO cliente){
+       ClientesDTO clienteValido = new ClientesDTO();
+       
+       try{
+          Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+
+            stmt = conexao.prepareStatement("select * from clientes where nome = ?, and senha = ?");
+            stmt.setString(1, cliente.getNome());
+            stmt.setString(2, cliente.getSenha());
+            rs = stmt.executeQuery();
+       
+            if(rs02.next()){
+                clienteValido.setIdCliente(rs.getInt);
+                clienteValido.set
+            }
+       }
+       
+      return clienteValido; 
+   } 
 }
 

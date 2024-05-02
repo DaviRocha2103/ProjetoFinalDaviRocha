@@ -10,6 +10,9 @@
     </head>
 
     <body>
+        <header>
+            <img src="./assets/logo.png" alt=""/>
+        </header>
         <main>
         <div id="login">
         <form class="container">
@@ -19,17 +22,17 @@
         <div class="container-login">
             <div class="container-user">
             <label for="usuario">Usuário</label>
-            <input type="text" id="usuario" autocomplete="off">
+            <input type="text" id="usuario" name="user" autocomplete="off">
         </div>
         <div class="container-user">
             <label for="password">Senha</label>
-            <input type="password" id="password" autocomplete="off">
+            <input type="password" id="password" name="passw" autocomplete="off">
         </div>
 
         </div>
         <div class="buttons">
         <a class="butt" href="#">Login</a>
-        <a href="#" class="recuperar_senha">Não tem uma conta? Registre-se</a>
+        <a href="./cadastro" class="recuperar_senha">Não tem uma conta? Registre-se</a>
                     </div>
                 </form>
             </div>
