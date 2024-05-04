@@ -32,7 +32,7 @@
         </div>
         <div class="buttons">
         <a class="butt" href="#">Login</a>
-        <a href="./cadastro" class="recuperar_senha">Não tem uma conta? Registre-se</a>
+        <a href="./Cadastro" class="recuperar_senha">Não tem uma conta? Registre-se</a>
                     </div>
                 </form>
             </div>

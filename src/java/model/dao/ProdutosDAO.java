@@ -104,4 +104,30 @@ public class ProdutosDAO {
         }
     }
      
+        public List<ProdutosDTO> busca (String buscar){
+            try{
+                Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            
+            stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE nome LIKE ? OR descricao LIKE ?");
+            stmt.setString(1, buscar);
+            stmt.setString(2, buscar);
+            
+            rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                ProdutosDTO prod = new ProdutosDTO();
+                prod.setIdProduto(rs.getInt("idProduto"));
+                prod.setNome(rs.getString("nome"));
+                prod.setDescricao(rs.getString("descricao"));
+                prod.setPreco(rs.getFloat("preco"));
+                
+                buscar.add(prod);
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+         
+    }
 }
