@@ -96,7 +96,7 @@ public class ClienteController extends HttpServlet {
             if (cliente.getIdCliente() > 0) {
                 if (cliente.getStatus() == 2) {
                     // redirecionar para página de admin
-                    response.sendRedirect("./cadProduto");
+                    response.sendRedirect("./Produtos");
                 } else {
                     // redirecionar para página de usuario
                     response.sendRedirect("./index");

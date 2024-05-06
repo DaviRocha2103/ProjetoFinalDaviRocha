@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * @author Senai
  */
 public class Conexao {
-    private static String url = "jdbc:mysql://localhost:3306/eles";
+    private static String url = "jdbc:mysql://localhost:3306/dvskts";
     private static String usuario = "root";
     private static String senha = "";
     private static String DRIVER = "com.mysql.cj.jdbc.Driver";

@@ -30,7 +30,15 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ClienteController</servlet-name>
+        <url-pattern>/Cadastrar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClienteController</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClienteController</servlet-name>
+        <url-pattern>/logar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ProdutosController</servlet-name>
@@ -38,7 +46,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ProdutosController</servlet-name>
-        <url-pattern>/index</url-pattern>
+        <url-pattern>/cadProdutos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

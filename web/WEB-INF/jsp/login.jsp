@@ -18,28 +18,31 @@
             <img src="./assets/logo.png" alt=""/>
         </header>
         <main>
+        <form action="logar" id="formulario" method="post">  
         <div id="login">
-        <form class="container">
+        <div class="container">
         <div class="container-header">
             <h2>Login</h2>
         </div>
         <div class="container-login">
             <div class="container-user">
             <label for="nome">Nome</label>
-            <input type="text" id="usuario" name="user" autocomplete="off">
+            <input type="text" id="usuario" class="form-control" name="user" autocomplete="off" required>
         </div>
         <div class="container-user">
             <label for="password">Senha</label>
-            <input type="password" id="password" name="passw" autocomplete="off">
+            <input type="password" id="password" class="form-control" name="passw" autocomplete="off" required>
         </div>
 
         </div>
         <div class="buttons">
-        <a class="butt" href="./index">Login</a>
-        <a href="./Cadastro" class="recuperar_senha">Não tem uma conta? Registre-se</a>
+            <button class="butt" type="submit">Login</button>
+        <a href="./Cadastro" class="cadastrar">Não tem uma conta? Registre-se</a>
                     </div>
-                </form>
             </div>
+        </div>
+            </form>
+        </main>
     </body>
     <script src="./js/login.js"></script>
 </html>

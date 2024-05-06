@@ -18,38 +18,41 @@
             <img src="./assets/logo.png" alt=""/>
         </header>
         <main>
+        <form action="./Cadastrar" method="post">
         <div id="cadastro">
-        <form class="container">
+        <div class="container">
         <div class="container-header">
             <h2>Cadastre-se</h2>
         </div>
         <div class="container-cadastro">
             <div class="container-user">
             <label for="nome">Nome</label>
-            <input type="text" id="usuario" name="user" autocomplete="off">
+            <input type="text" id="usuario" name="nome" class="form-control" autocomplete="off" required>
         </div>
         <div class="container-user">
             <label for="senha">Senha</label>
-            <input type="password" id="password" name="passw" autocomplete="off">
+            <input type="password" id="password" name="passw" class="form-control"  autocomplete="off" required>
         </div>
         <div class="container-user">
             <label for="email">E-mail</label>
-            <input type="text" id="email" name="emai" autocomplete="off">
+            <input type="text" id="email" name="email" class="form-control"  autocomplete="off">
         </div>
         <div class="container-user">
             <label for="cpf">Cpf</label>
-            <input type="text" id="cpf" name="cpf" autocomplete="off">
+            <input type="text" id="cpf" name="cpf" class="form-control"  autocomplete="off">
         </div>
         <div class="container-user">
             <label for="tel">Telefone</label>
-            <input type="text" id="tel" name="tel" autocomplete="off">
+            <input type="text" id="tel" name="tel" class="form-control"  autocomplete="off">
         </div>
 
         </div>
         <div class="buttons">
-        <a class="butt" href="./login">Cadastrar</a>
+            <button class="butt" type="submit">Logar</button>
                     </div>
-                </form>
+                </div>
             </div>
+        </form>
+        </main>
     </body>
 </html>
