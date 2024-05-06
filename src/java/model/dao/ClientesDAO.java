@@ -53,7 +53,7 @@ public class ClientesDAO {
       public void insert(ClientesDTO clientes) {
 
         try (Connection conexao = Conexao.conectar();
-                PreparedStatement stmt = conexao.prepareStatement("insert into clientes(nome, senha, email, cpf, telefone) value (?,?,?,?,?)")) {
+                PreparedStatement stmt = conexao.prepareStatement("insert into clientes(nome, senha, email, cpf, telefone, status) value (?,?,?,?,?, 1)")) {
 
             stmt.setString(1, clientes.getNome());
             stmt.setString(2, clientes.getSenha());
@@ -64,51 +64,35 @@ public class ClientesDAO {
 
             stmt.close();
             conexao.close();
-            JOptionPane.showMessageDialog(null, "Usuario Cadastrado Com Sucesso");
         } catch (SQLException a) {
             a.printStackTrace();
         }
 
     }
       
-      public void deletar(ClientesDTO cliente) {
+     public ClientesDTO buscarLogin(ClientesDTO cliente) {
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
-
-            stmt = conexao.prepareStatement("delete from cliente where idCliente = ?");
-            stmt.setInt(1, cliente.getIdCliente());
-
-            stmt.executeUpdate();
+            ResultSet rs = null;
+            
+            stmt = conexao.prepareStatement("SELECT idCliente, status FROM clientes WHERE nome = ? AND senha = ?");
+            stmt.setString(1, cliente.getNome());
+            stmt.setString(2, cliente.getSenha());
+            
+            rs = stmt.executeQuery();
+            if(rs.next()){
+                cliente.setIdCliente(rs.getInt("idCliente"));
+                cliente.setStatus(rs.getInt("status"));
+            }
+            rs.close();
             stmt.close();
             conexao.close();
-            JOptionPane.showMessageDialog(null, "Usuario Deletado");
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        
+        return cliente;
     }
-      
-        public void edit(ClientesDTO clienteUpd){
-        try{
-            Connection conexao = Conexao.conectar();
-            PreparedStatement stmt = null;
-            
-            stmt = conexao.prepareStatement("UPDATE cliente SET nome = ?, senha = ?, email = ?, cpf = ?, telefone = ? WHERE idCliente = ?");
-            stmt.setString(1, clienteUpd.getNome());
-            stmt.setString(2, clienteUpd.getSenha());
-            stmt.setString(3, clienteUpd.getEmail());
-            stmt.setString(4, clienteUpd.getCpf());
-            stmt.setString(5, clienteUpd.getTelefone());
-            stmt.setInt(6, clienteUpd.getIdCliente());
-            
-            stmt.executeUpdate();
-            stmt.close();
-            conexao.close();
-            JOptionPane.showMessageDialog(null, "Usuario Atualizado!");
-        }catch(SQLException e){
-            e.printStackTrace();
-        }
-    }
-   
 }
 

@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/web/WEB-INF/jsp/login.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/src/java/model/bean/CategoriaDTO.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/src/java/model/bean/ProdutosDTO.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/src/java/model/dao/ProdutosDAO.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/web/redirect.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/src/java/model/bean/HistoricoDTO.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/web/style/cadastro.css</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/src/java/model/bean/ClientesDTO.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/web/style/index.css</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/web/WEB-INF/jsp/cadastro.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/web/WEB-INF/jsp/index.jsp</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/src/java/model/dao/HistoricoDAO.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/src/java/conexao/Conexao.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/src/java/controller/ClienteController.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/src/java/model/dao/ClientesDAO.java</file>
+        </group>
+    </open-files>
 </project-private>

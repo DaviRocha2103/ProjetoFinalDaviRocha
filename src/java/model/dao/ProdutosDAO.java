@@ -52,12 +52,13 @@ public class ProdutosDAO {
       public void insert(ProdutosDTO produtos) {
 
         try (Connection conexao = Conexao.conectar();
-                PreparedStatement stmt = conexao.prepareStatement("insert into produtos(quantidade, statusPedido, enderecoEntrega, totalPedido) value (?,?,?,?)")) {
+                PreparedStatement stmt = conexao.prepareStatement("insert into produtos(quantidade, statusPedido, enderecoEntrega, totalPedido, imagem) value (?,?,?,?,?)")) {
 
             stmt.setString(1, produtos.getNome());
             stmt.setString(2, produtos.getDescricao());
             stmt.setFloat(3, produtos.getPreco());
             stmt.setInt(4, produtos.getQuantidade());
+            stmt.setBytes(5, produtos.getImagem());
             stmt.executeUpdate();
 
             stmt.close();
@@ -68,66 +69,64 @@ public class ProdutosDAO {
 
     }
       
-      public void deletar(ProdutosDTO produto) {
+      public List<ProdutosDTO> buscaProdutos(String busca) {
+        List<ProdutosDTO> resultadoBusca = new ArrayList();
+
         try {
             Connection conexao = Conexao.conectar();
-            PreparedStatement stmt = null;
-
-            stmt = conexao.prepareStatement("delete from produtos where idProduto = ?");
-            stmt.setInt(1, produto.getIdProduto());
-
-            stmt.executeUpdate();
-            stmt.close();
-            conexao.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-      
-        public void edit(ProdutosDTO produtosUpd){
-        try{
-            Connection conexao = Conexao.conectar();
-            PreparedStatement stmt = null;
-            
-            stmt = conexao.prepareStatement("UPDATE produtos SET nome = ?, descricao = ?, preco = ?, quantidade = ? WHERE idProduto = ?");
-            stmt.setString(2, produtosUpd.getNome());
-            stmt.setString(3, produtosUpd.getDescricao());
-            stmt.setFloat(4, produtosUpd.getPreco());
-            stmt.setInt(5, produtosUpd.getQuantidade());
-            stmt.setInt(6, produtosUpd.getIdProduto());
-            
-            stmt.executeUpdate();
-            stmt.close();
-            conexao.close();
-        }catch(SQLException e){
-            e.printStackTrace();
-        }
-    }
-     
-        public List<ProdutosDTO> busca (String buscar){
-            try{
-                Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
             
             stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE nome LIKE ? OR descricao LIKE ?");
-            stmt.setString(1, buscar);
-            stmt.setString(2, buscar);
+            stmt.setString(1, busca);
+            stmt.setString(2, busca);
             
             rs = stmt.executeQuery();
             
-            while(rs.next()){
+            while(rs.next()) {
                 ProdutosDTO prod = new ProdutosDTO();
                 prod.setIdProduto(rs.getInt("idProduto"));
                 prod.setNome(rs.getString("nome"));
                 prod.setDescricao(rs.getString("descricao"));
                 prod.setPreco(rs.getFloat("preco"));
+                prod.setImagem(rs.getBytes("imagem"));
                 
-                buscar.add(prod);
+                resultadoBusca.add(prod);
             }
-        }catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
-         
+        return resultadoBusca;
     }
+      
+       public List<ProdutosDTO> buscaCategoria (int categoria) {
+        List<ProdutosDTO> resultadoBusca = new ArrayList();
+
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            
+            stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE categoria = ?");
+            stmt.setInt(1, categoria);
+            
+            rs = stmt.executeQuery();
+            
+            while(rs.next()) {
+                ProdutosDTO prod = new ProdutosDTO();
+                prod.setIdProduto(rs.getInt("idProduto"));
+                prod.setNome(rs.getString("nome"));
+                prod.setCategoria(rs.getInt("categoria"));
+                prod.setDescricao(rs.getString("descricao"));
+                prod.setPreco(rs.getFloat("preco"));
+                prod.setImagem(rs.getBytes("imagem"));
+                
+                resultadoBusca.add(prod);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultadoBusca;
+    }
+     
 }

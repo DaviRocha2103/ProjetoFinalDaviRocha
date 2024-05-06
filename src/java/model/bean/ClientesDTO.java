@@ -17,17 +17,19 @@ public class ClientesDTO {
     private String email;
     private String cpf;
     private String telefone;
+    private int status;
 
     public ClientesDTO() {
     }
 
-    public ClientesDTO(int idCliente, String nome, String senha, String email, String cpf, String telefone) {
+    public ClientesDTO(int idCliente, String nome, String senha, String email, String cpf, String telefone, int status) {
         this.idCliente = idCliente;
         this.nome = nome;
         this.senha = senha;
         this.email = email;
         this.cpf = cpf;
         this.telefone = telefone;
+        this.status = status;
     }
 
     public int getIdCliente() {
@@ -77,9 +79,15 @@ public class ClientesDTO {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    
-    
-    
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
     
 }
 
