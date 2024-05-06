@@ -7,16 +7,21 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.ClientesDTO;
+import model.dao.ClientesDAO;
 
 /**
  *
  * @author Senai
  */
+@WebServlet(name = "ClienteController", urlPatterns = {"/Cadastro", "/login", "/Cadastrar", "/logar"})
 public class ClienteController extends HttpServlet {
 
     /**
@@ -36,7 +41,9 @@ public class ClienteController extends HttpServlet {
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
         dispatcher.forward(request, response);
        }else if(url.equals("/login")){
-            
+        String nextPage = "/WEB-INF/jsp/login.jsp";
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+        dispatcher.forward(request, response);
         }
     }
 
@@ -66,7 +73,42 @@ public class ClienteController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String url = request.getServletPath();
+        if (url.equals("/Cadastrar")) {
+            ClientesDTO cadast = new ClientesDTO();
+            cadast.setNome(request.getParameter("nome").equals("") ? "" : request.getParameter("nome"));
+            cadast.setSenha(request.getParameter("senha"));
+            cadast.setEmail(request.getParameter("email"));
+            cadast.setTelefone(request.getParameter("telefone"));
+            cadast.setCpf(request.getParameter("cpf"));
+
+            ClientesDAO caD = new ClientesDAO();
+            caD.insert(cadast);
+
+            response.sendRedirect("./login");
+        } else if (url.equals("/logar")) {
+            ClientesDTO cliente = new ClientesDTO();
+            cliente.setNome(request.getParameter("nome"));
+            cliente.setSenha(request.getParameter("senha"));
+
+            ClientesDAO cliD = new ClientesDAO();
+            cliente = cliD.buscarLogin(cliente);
+            if (cliente.getIdCliente() > 0) {
+                if (cliente.getStatus() == 2) {
+                    // redirecionar para página de admin
+                    response.sendRedirect("./cadProduto");
+                } else {
+                    // redirecionar para página de usuario
+                    response.sendRedirect("./index");
+                }
+            } else {
+                request.setAttribute("erroMensagem", "Erro ao realizar Login");
+                String nextPage = "/WEB-INF/jsp/erroLogin.jsp";
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+                dispatcher.forward(request, response);
+            }
+
+        }
     }
 
     /**
@@ -78,5 +120,6 @@ public class ClienteController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }
+
+

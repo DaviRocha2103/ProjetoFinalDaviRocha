@@ -25,11 +25,11 @@
         </div>
         <div class="container-cadastro">
             <div class="container-user">
-            <label for="usuario">Usuário</label>
+            <label for="nome">Nome</label>
             <input type="text" id="usuario" name="user" autocomplete="off">
         </div>
         <div class="container-user">
-            <label for="password">Senha</label>
+            <label for="senha">Senha</label>
             <input type="password" id="password" name="passw" autocomplete="off">
         </div>
         <div class="container-user">
@@ -47,7 +47,7 @@
 
         </div>
         <div class="buttons">
-        <a class="butt" href="#">Cadastrar</a>
+        <a class="butt" href="./login">Cadastrar</a>
                     </div>
                 </form>
             </div>
