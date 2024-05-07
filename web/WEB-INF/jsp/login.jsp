@@ -27,11 +27,11 @@
         <div class="container-login">
             <div class="container-user">
             <label for="nome">Nome</label>
-            <input type="text" id="usuario" class="form-control" name="user" autocomplete="off" required>
+            <input type="text" id="usuario" class="form-control" name="nome" autocomplete="off" required>
         </div>
         <div class="container-user">
             <label for="password">Senha</label>
-            <input type="password" id="password" class="form-control" name="passw" autocomplete="off" required>
+            <input type="password" id="password" class="form-control" name="senha" autocomplete="off" required>
         </div>
 
         </div>

@@ -5,7 +5,9 @@
  */
 package controller;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -13,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import model.bean.CategoriaDTO;
 import model.bean.ProdutosDTO;
 import model.dao.CategoriasDAO;
@@ -39,11 +42,11 @@ public class ProdutosController extends HttpServlet {
        ProdutosDAO produtosDAO = new ProdutosDAO();
         CategoriasDAO categoriasDAO = new CategoriasDAO();
         List<CategoriaDTO> categorias = categoriasDAO.listarCategorias();
-        request.setAttribute("categorias", categorias);
+        request.setAttribute("categoria", categorias);
         String url = request.getServletPath();
         System.out.println(url);
-        if(url.equals("/Produtos")) {
-            String nextPage = "/WEB-INF/jsp/cadastroProduto.jsp";
+        if(url.equals("./Produtos")) {
+            String nextPage = "/WEB-INF/jsp/cadastroProdutos.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
         } else if(url.equals("/index")){
@@ -52,7 +55,7 @@ public class ProdutosController extends HttpServlet {
             String nextPage = "/WEB-INF/jsp/index.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
-        } else if (url.equals("/buscar-produtos")) {
+        } else if (url.equals("/buscarProdutos")) {
             String busca = request.getParameter("busca") != null ? request.getParameter("busca") : "";
             if(busca.equals("")) {
                 String categoria = request.getParameter("cat");
@@ -96,7 +99,24 @@ public class ProdutosController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        ProdutosDTO newProduto = new ProdutosDTO();
+        newProduto.setNome(request.getParameter("nome"));
+        newProduto.setCategoria(Integer.parseInt(request.getParameter("categoria")));
+        newProduto.setDescricao(request.getParameter("descricao"));
+        newProduto.setPreco(Float.parseFloat(request.getParameter("valor")));
+        Part filePart = request.getPart("imagem");
+        InputStream istream = filePart.getInputStream();
+        ByteArrayOutputStream byteA = new ByteArrayOutputStream();
+        byte[] img = new byte[4096];
+        int byteRead = -1;
+        while((byteRead = istream.read(img)) != -1 ) {
+            byteA.write(img, 0, byteRead);
+        }
+        byte[] imgBytes = byteA.toByteArray();
+        newProduto.setImagem(imgBytes);
+        ProdutosDAO produtosD = new ProdutosDAO();
+        produtosD.insert(newProduto);
+        response.sendRedirect("./index");
     }
 
     /**

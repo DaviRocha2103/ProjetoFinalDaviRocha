@@ -1,0 +1,123 @@
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#cadastroProduto {
+    display: flex;
+    justify-content: flex-end;
+    height: 37vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    align-content: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
+
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.137);
+    padding: 40px;
+    border-radius: 23px;
+    width: 309px;
+    height: 451px;
+    margin-right: 47%;
+
+}
+
+#descricao{
+    width: 591px;
+    height: 52px;
+}
+
+.form-group label {
+    color: #000000;
+    font-size: 12px;
+    opacity: 0.8;
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding:10px 0;
+
+}
+
+.form-control{
+    display: block;
+    width: 200%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control-file, .form-control-range {
+    display: block;
+    width: 200%;
+}
+
+.form-group input {
+    margin-top: -12px;
+    padding: 10px 0px;
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    color: #000000;
+
+}
+
+.cabeçalho {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.cabeçalho img {
+    display: block;
+    margin: 0 auto;
+}
+
+.titulo{
+    justify-content: center;
+    align-items: center;
+}
+
+.form-control input:focus{
+    outline: none;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.buttons .butt{
+    width: 210%;
+    height: 48px;
+    background-color: #fffdfd00;
+    border: none;
+    color: #000000;
+    margin: 17px 0;
+    font-size: 25px;
+}
+
+

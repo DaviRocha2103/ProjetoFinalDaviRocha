@@ -31,7 +31,7 @@
         </div>
         <div class="container-user">
             <label for="senha">Senha</label>
-            <input type="password" id="password" name="passw" class="form-control"  autocomplete="off" required>
+            <input type="password" id="password" name="senha" class="form-control"  autocomplete="off" required>
         </div>
         <div class="container-user">
             <label for="email">E-mail</label>
@@ -43,7 +43,7 @@
         </div>
         <div class="container-user">
             <label for="tel">Telefone</label>
-            <input type="text" id="tel" name="tel" class="form-control"  autocomplete="off">
+            <input type="text" id="tel" name="telefone" class="form-control"  autocomplete="off">
         </div>
 
         </div>

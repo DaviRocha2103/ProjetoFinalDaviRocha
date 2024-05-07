@@ -36,14 +36,14 @@ public class ClienteController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
-        if(url.equals("/Cadastro")){
-        String nextPage = "/WEB-INF/jsp/cadastro.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-        dispatcher.forward(request, response);
-       }else if(url.equals("/login")){
-        String nextPage = "/WEB-INF/jsp/login.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-        dispatcher.forward(request, response);
+        if (url.equals("/Cadastro")) {
+            String nextPage = "/WEB-INF/jsp/cadastro.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+            dispatcher.forward(request, response);
+        } else if (url.equals("/login")) {
+            String nextPage = "/WEB-INF/jsp/login.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+            dispatcher.forward(request, response);
         }
     }
 
@@ -95,11 +95,15 @@ public class ClienteController extends HttpServlet {
             cliente = cliD.buscarLogin(cliente);
             if (cliente.getIdCliente() > 0) {
                 if (cliente.getStatus() == 2) {
-                    // redirecionar para página de admin
-                    response.sendRedirect("./Produtos");
+
+                    String nextPage = "/WEB-INF/jsp/cadastroProdutos.jsp";
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+                    dispatcher.forward(request, response);
                 } else {
-                    // redirecionar para página de usuario
-                    response.sendRedirect("./index");
+
+                    String nextPage = "/WEB-INF/jsp/index.jsp";
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+                    dispatcher.forward(request, response);
                 }
             } else {
                 request.setAttribute("erroMensagem", "Erro ao realizar Login");
@@ -121,5 +125,3 @@ public class ClienteController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 }
-
-
