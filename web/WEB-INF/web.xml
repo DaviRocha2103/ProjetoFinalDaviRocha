@@ -46,7 +46,11 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ProdutosController</servlet-name>
-        <url-pattern>/cadProdutos</url-pattern>
+        <url-pattern>/cadastroP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>produtosController</servlet-name>
+        <url-pattern>/cadastrarProduto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

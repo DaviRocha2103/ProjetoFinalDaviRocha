@@ -70,41 +70,4 @@ public class HistoricoDAO {
 
     }
       
-      public void deletar(HistoricoDTO historico) {
-        try {
-            Connection conexao = Conexao.conectar();
-            PreparedStatement stmt = null;
-
-            stmt = conexao.prepareStatement("delete from historico where idItem = ?");
-            stmt.setInt(1, historico.getIdItem());
-
-            stmt.executeUpdate();
-            stmt.close();
-            conexao.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-      
-        public void edit(HistoricoDTO historicoUpd){
-        try{
-            Connection conexao = Conexao.conectar();
-            PreparedStatement stmt = null;
-            
-            stmt = conexao.prepareStatement("UPDATE historico SET dataPedido = ?, idPedido = ?, idProduto = ?, quantidade = ?, precoUnitario = ? WHERE idItem = ?");
-            stmt.setDate(1, historicoUpd.getDataPedido());
-            stmt.setInt(2, historicoUpd.getIdPedido());
-            stmt.setInt(3, historicoUpd.getIdProduto());
-            stmt.setInt(4, historicoUpd.getQuantidade());
-            stmt.setFloat(5, historicoUpd.getPrecoUnitario());
-            stmt.setInt(6, historicoUpd.getIdItem());
-            
-            stmt.executeUpdate();
-            stmt.close();
-            conexao.close();
-        }catch(SQLException e){
-            e.printStackTrace();
-        }
-    }
-     
 }

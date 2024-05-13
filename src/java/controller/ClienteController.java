@@ -21,7 +21,7 @@ import model.dao.ClientesDAO;
  *
  * @author Senai
  */
-@WebServlet(name = "ClienteController", urlPatterns = {"/Cadastro", "/login", "/Cadastrar", "/logar"})
+
 public class ClienteController extends HttpServlet {
 
     /**
@@ -96,14 +96,11 @@ public class ClienteController extends HttpServlet {
             if (cliente.getIdCliente() > 0) {
                 if (cliente.getStatus() == 2) {
 
-                    String nextPage = "/WEB-INF/jsp/cadastroProdutos.jsp";
-                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-                    dispatcher.forward(request, response);
+                 response.sendRedirect("./cadastroP");
+                   
                 } else {
 
-                    String nextPage = "/WEB-INF/jsp/index.jsp";
-                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-                    dispatcher.forward(request, response);
+                    response.sendRedirect("./index");
                 }
             } else {
                 request.setAttribute("erroMensagem", "Erro ao realizar Login");

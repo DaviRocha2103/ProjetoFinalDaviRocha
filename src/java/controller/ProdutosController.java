@@ -9,6 +9,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.Base64;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,19 +39,28 @@ public class ProdutosController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-       ProdutosDAO produtosDAO = new ProdutosDAO();
-        CategoriasDAO categoriasDAO = new CategoriasDAO();
-        List<CategoriaDTO> categorias = categoriasDAO.listarCategorias();
-        request.setAttribute("categoria", categorias);
+        ProdutosDAO produtosDAO = new ProdutosDAO();
+        CategoriasDAO CategoriasDAO = new CategoriasDAO();
+        List<CategoriaDTO> categorias = CategoriasDAO.listarCategorias();
+        request.setAttribute("categorias", categorias);
         String url = request.getServletPath();
         System.out.println(url);
-        if(url.equals("./Produtos")) {
+        if(url.equals("/cadastroP")) {
             String nextPage = "/WEB-INF/jsp/cadastroProdutos.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
         } else if(url.equals("/index")){
             List<ProdutosDTO> produtos = produtosDAO.read();
+            for (int i = 0; i < produtos.size(); i++) {
+                    
+                    if (produtos.get(i).getImagem() != null) {
+                        String imagemBase64 = Base64.getEncoder().encodeToString(produtos.get(i).getImagem());
+                        System.out.println("aqui");
+                        System.out.println(imagemBase64);
+                        produtos.get(i).setImagemBase64(imagemBase64);
+
+                    }
+                }
             request.setAttribute("produtos", produtos);
             String nextPage = "/WEB-INF/jsp/index.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
@@ -70,6 +80,7 @@ public class ProdutosController extends HttpServlet {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
         }
+        
         
     }
 

@@ -12,23 +12,27 @@ package model.bean;
 public class ProdutosDTO {
     private int idProduto;
     private String nome;
+    private int tamanho;
     private int categoria;
     private String descricao;
     private float preco;
     private int quantidade;
     private byte[] imagem;
+    private String imagemBase64;
 
     public ProdutosDTO() {
     }
 
-    public ProdutosDTO(int idProduto, String nome, int categoria, String descricao, float preco, int quantidade, byte[] imagem) {
+    public ProdutosDTO(int idProduto, String nome, int tamanho, int categoria, String descricao, float preco, int quantidade, byte[] imagem, String imagemBase64) {
         this.idProduto = idProduto;
         this.nome = nome;
+        this.tamanho = tamanho;
         this.categoria = categoria;
         this.descricao = descricao;
         this.preco = preco;
         this.quantidade = quantidade;
         this.imagem = imagem;
+        this.imagemBase64 = imagemBase64;
     }
 
     public int getIdProduto() {
@@ -45,6 +49,14 @@ public class ProdutosDTO {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public int getTamanho() {
+        return tamanho;
+    }
+
+    public void setTamanho(int tamanho) {
+        this.tamanho = tamanho;
     }
 
     public int getCategoria() {
@@ -86,5 +98,15 @@ public class ProdutosDTO {
     public void setImagem(byte[] imagem) {
         this.imagem = imagem;
     }
+
+    public String getImagemBase64() {
+        return imagemBase64;
+    }
+
+    public void setImagemBase64(String imagemBase64) {
+        this.imagemBase64 = imagemBase64;
+    }
+
+    
 
 }
