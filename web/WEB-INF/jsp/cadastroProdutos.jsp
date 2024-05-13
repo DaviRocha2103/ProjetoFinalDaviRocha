@@ -25,7 +25,7 @@
     </header>
      <div id="cadastroProduto">
     <div class="container">
-        <form action="cadastroProdutos" method="POST" enctype="multipart/form-data">
+        <form action="cadastroProduto" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome" required>

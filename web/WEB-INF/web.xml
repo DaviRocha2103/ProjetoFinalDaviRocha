@@ -29,6 +29,10 @@
         <url-pattern>/Cadastro</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>ProdutosController</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ClienteController</servlet-name>
         <url-pattern>/Cadastrar</url-pattern>
     </servlet-mapping>
@@ -46,12 +50,13 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ProdutosController</servlet-name>
-        <url-pattern>/cadastroP</url-pattern>
+        <url-pattern>/cadastroProduto</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>produtosController</servlet-name>
-        <url-pattern>/cadastrarProduto</url-pattern>
+        <servlet-name>ProdutosController</servlet-name>
+        <url-pattern>/cadastroP</url-pattern>
     </servlet-mapping>
+   
     <session-config>
         <session-timeout>
             30

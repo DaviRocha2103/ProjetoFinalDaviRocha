@@ -11,7 +11,7 @@
 
     <body>
         <header>
-            
+            <jsp:include page="header.jsp"></jsp:include>
         </header>
             <main>
                 <h1>O</h1>

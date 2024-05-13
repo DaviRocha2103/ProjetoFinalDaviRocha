@@ -1,92 +1,10 @@
-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13/05/2024, 15:36:02
+    Author     : Senai
+*/
 
-
-
-body {
-    padding: 0;
-    margin: 0;
-    background: url("../assets/background.png") ;
-    background-size: cover;
-    background-position: center;
-}
-
-#login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 70vh;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
-}
-
-.container {
-    background-color: rgba(0, 0, 0, 0.705);
-    padding: 81px;
-    border-radius: 29px;
-    width: 375px;
-
-}
-
-.container-header {
-    padding-bottom: 50px;
-    opacity: 0.8;
-    color: #fff;
-
-}
-
-
-.container-login label {
-    color: #fff;
-    font-size: 12px;
-    opacity: 0.8;
-
-}
-
-.container-user {
-    display: flex;
-    flex-direction: column;
-    padding:10px 0;
-
-}
-
-.container-user input {
-    margin-top: 10px;
-    padding:0 5px;
-    background-color: transparent;
-    border:none;
-    border-bottom: 1px solid #e1e1e1;
-    outline: none;
-    color: #fff;
-
-}
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-
-}
-
-.buttons .butt{
-    width: 100%;
-    height: 49px;
-    background-color: #00000000;
-    border: none;
-    color: #fffdfd;
-    margin: 17px 0;
-    font-size: 19px;
-
-}
-
-.buttons a {
-    text-align: center;
-    font-size: 16px;
-    opacity: 0.8;
-    color: #fff;
-    text-decoration: none;
-    color: greenyellow;
-
-}
