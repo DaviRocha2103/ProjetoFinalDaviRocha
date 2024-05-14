@@ -25,14 +25,14 @@
     </header>
      <div id="cadastroProduto">
     <div class="container">
-        <form action="cadastroProduto" method="POST" enctype="multipart/form-data">
+        <form action="insert" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome" required>
             </div>
             <div class="form-group">
                 <label for="categoria">Categoria:</label>
-                <select class="form-control" id="categoria" name="categoria">
+                <select class="form-control" id="categoria" name="categorias">
                     <option value="1">Camisetas</option>
                     <option value="2">Calças</option>
                     <option value="3">Tenis</option>
@@ -41,7 +41,7 @@
                     <option value="6">Rodas</option>    
                     <option value="7">Lixas</option>
                     <option value="8">Rolamentos</option>
-                    <option value="5">Parafusos</option>
+                    <option value="9">Parafusos</option>
                 </select>
             </div>
             <div class="form-group">
@@ -51,6 +51,10 @@
             <div class="form-group">
                 <label for="descricao">Descrição:</label>
                 <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" step="0.01" class="form-control" id="quantidade" name="quantidade" required>
             </div>
             <div class="form-group">
                 <label for="imagem">Imagem do Produto:</label>

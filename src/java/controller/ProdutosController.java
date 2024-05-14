@@ -13,6 +13,7 @@ import java.util.Base64;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,6 +27,7 @@ import model.dao.ProdutosDAO;
  *
  * @author Senai
  */
+@MultipartConfig
 public class ProdutosController extends HttpServlet {
 
     /**
@@ -110,11 +112,15 @@ public class ProdutosController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ProdutosDTO newProduto = new ProdutosDTO();
-        newProduto.setNome(request.getParameter("nome"));
-        newProduto.setCategoria(Integer.parseInt(request.getParameter("categoria")));
+        String url = request.getServletPath();
+        if(url.equals("/insert")){
+           ProdutosDTO newProduto = new ProdutosDTO();
+        newProduto.setNome(request.getParameter("nome"));            
+        newProduto.setCategoria(Integer.parseInt(request.getParameter("categorias")));
+                   System.out.println("erro aq");
         newProduto.setDescricao(request.getParameter("descricao"));
         newProduto.setPreco(Float.parseFloat(request.getParameter("valor")));
+        newProduto.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
         Part filePart = request.getPart("imagem");
         InputStream istream = filePart.getInputStream();
         ByteArrayOutputStream byteA = new ByteArrayOutputStream();
@@ -122,14 +128,18 @@ public class ProdutosController extends HttpServlet {
         int byteRead = -1;
         while((byteRead = istream.read(img)) != -1 ) {
             byteA.write(img, 0, byteRead);
+
         }
         byte[] imgBytes = byteA.toByteArray();
         newProduto.setImagem(imgBytes);
         ProdutosDAO produtosD = new ProdutosDAO();
         produtosD.insert(newProduto);
         response.sendRedirect("./index");
+         
+        }
+        
     }
-
+        
     /**
      * Returns a short description of the servlet.
      *

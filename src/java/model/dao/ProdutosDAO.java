@@ -34,6 +34,7 @@ public class ProdutosDAO {
                 ProdutosDTO produto = new ProdutosDTO();
                 produto.setIdProduto(rs.getInt("idProduto"));
                 produto.setNome(rs.getString("nome"));
+                produto.setCategoria(rs.getInt("categoria"));
                 produto.setDescricao(rs.getString("descricao"));
                 produto.setPreco(rs.getFloat("preco"));
                 produto.setQuantidade(rs.getInt("quantidade"));
@@ -52,13 +53,14 @@ public class ProdutosDAO {
       public void insert(ProdutosDTO produtos) {
 
         try (Connection conexao = Conexao.conectar();
-                PreparedStatement stmt = conexao.prepareStatement("insert into produtos(quantidade, statusPedido, enderecoEntrega, totalPedido, imagem) value (?,?,?,?,?)")) {
+                PreparedStatement stmt = conexao.prepareStatement("insert into produtos(nome, categoria, descricao, preco, quantidade,imagem) value (?,?,?,?,?,?)")) {
 
             stmt.setString(1, produtos.getNome());
-            stmt.setString(2, produtos.getDescricao());
-            stmt.setFloat(3, produtos.getPreco());
-            stmt.setInt(4, produtos.getQuantidade());
-            stmt.setBytes(5, produtos.getImagem());
+            stmt.setInt(2, produtos.getCategoria());
+            stmt.setString(3, produtos.getDescricao());
+            stmt.setFloat(4, produtos.getPreco());
+            stmt.setInt(5, produtos.getQuantidade());
+            stmt.setBytes(6, produtos.getImagem());
             stmt.executeUpdate();
 
             stmt.close();

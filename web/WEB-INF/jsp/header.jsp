@@ -15,11 +15,18 @@
     </head>
     <body>
         <header>
+        
             <div class="pesquisa">
                 <input type="text" class="search-txt" placeholder="Pesquisar">
                 <a href="./index" class="searchbtn">
                 <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
                 </a>
+            </div>
+            <div >
+                <img id="logo" src="./assets/logo.png" alt=""/>
+            </div>
+            <div class="barra">
+                <i  class="fa-solid fa-bars" style="color: #000000;"></i>
             </div>
             <div class="container container-categorias">
                     <c:forEach items="${categorias}" var="categoria" >

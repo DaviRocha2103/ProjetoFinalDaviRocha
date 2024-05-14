@@ -48,6 +48,7 @@
         <servlet-name>ProdutosController</servlet-name>
         <url-pattern>/Produtos</url-pattern>
     </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>ProdutosController</servlet-name>
         <url-pattern>/cadastroProduto</url-pattern>
@@ -55,6 +56,10 @@
     <servlet-mapping>
         <servlet-name>ProdutosController</servlet-name>
         <url-pattern>/cadastroP</url-pattern>
+    </servlet-mapping>
+        <servlet-mapping>
+        <servlet-name>ProdutosController</servlet-name>
+        <url-pattern>/insert</url-pattern>
     </servlet-mapping>
    
     <session-config>

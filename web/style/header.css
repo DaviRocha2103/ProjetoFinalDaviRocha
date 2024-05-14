@@ -13,7 +13,7 @@
 header{
     display: flex;
     width: 100vw;
-    height: 100px;
+    height: 130px;
     background: url(../assets/background.png);
     background-size: cover;
     background-position: center;
@@ -24,15 +24,16 @@ header{
 }
 
 .pesquisa{
-position: absolute;
-background: black;
-height: 40px;
-padding: 10px;
-border-radius: 40px;
-display: flex;
-justify-content: space-between;
-align-content: space-between;
-align-items: center;
+    position: absolute;
+    left: 10%;
+    background: black;
+    height: 19px;
+    padding: 12px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
 }
 
 .search-txt{
@@ -59,4 +60,23 @@ width: 240px;
 
 }
 
+#logo{
+    position: relative;
+    left: 46%;
+    margin-top: 25px;
+}
 
+.barra{ 
+    position: relative;
+    top: -85%;
+    left: 4%;
+}
+
+.fa-bars{
+    font-size: 23px
+}
+
+.fa-magnifying-glass{
+    font-size: 20px;
+    text-decoration: none;
+}
