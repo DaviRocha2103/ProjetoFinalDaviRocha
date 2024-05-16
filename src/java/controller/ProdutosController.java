@@ -8,7 +8,6 @@ package controller;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
 import java.util.Base64;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -112,14 +111,12 @@ public class ProdutosController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = request.getServletPath();
-        if(url.equals("/insert")){
            ProdutosDTO newProduto = new ProdutosDTO();
         newProduto.setNome(request.getParameter("nome"));            
         newProduto.setCategoria(Integer.parseInt(request.getParameter("categorias")));
                    System.out.println("erro aq");
         newProduto.setDescricao(request.getParameter("descricao"));
-        newProduto.setPreco(Float.parseFloat(request.getParameter("valor")));
+        newProduto.setPreco(Float.parseFloat(request.getParameter("preco")));
         newProduto.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
         Part filePart = request.getPart("imagem");
         InputStream istream = filePart.getInputStream();
@@ -136,7 +133,6 @@ public class ProdutosController extends HttpServlet {
         produtosD.insert(newProduto);
         response.sendRedirect("./index");
          
-        }
         
     }
         

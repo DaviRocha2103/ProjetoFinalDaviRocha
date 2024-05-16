@@ -23,7 +23,7 @@ header{
     justify-content: center;
 }
 
-.pesquisa{
+form .pesquisa{
     position: absolute;
     left: 10%;
     background: black;

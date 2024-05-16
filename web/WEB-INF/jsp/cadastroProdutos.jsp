@@ -45,8 +45,8 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="valor">Valor:</label>
-                <input type="number" step="0.01" class="form-control" id="valor" name="valor" required>
+                <label for="preco">Valor:</label>
+                <input type="number" step="0.01" class="form-control" id="valor" name="preco" required>
             </div>
             <div class="form-group">
                 <label for="descricao">Descrição:</label>

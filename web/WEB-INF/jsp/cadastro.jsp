@@ -48,11 +48,12 @@
 
         </div>
         <div class="buttons">
-            <button class="butt" type="submit">Logar</button>
+            <button class="butt" id="confBtn" type="submit">Logar</button>
                     </div>
                 </div>
+            </form>
             </div>
-        </form>
         </main>
+         <script src="./js/cadastro.js" type="text/javascript"></script>
     </body>
 </html>

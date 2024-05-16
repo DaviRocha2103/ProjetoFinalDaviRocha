@@ -10,18 +10,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>header</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link href="./style/header.css" rel="stylesheet" type="text/css"/>
         <script src="https://kit.fontawesome.com/6fbfeb6bdb.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
-        
+            <form action="buscarProdutos" method="get">
             <div class="pesquisa">
                 <input type="text" class="search-txt" placeholder="Pesquisar">
                 <a href="./index" class="searchbtn">
                 <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
                 </a>
             </div>
+            </form>
             <div >
                 <img id="logo" src="./assets/logo.png" alt=""/>
             </div>
@@ -37,4 +39,8 @@
                 </div>
         </header>
     </body>
+    <script src="https://kit.fontawesome.com/ffe7fbbd06.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </html>
