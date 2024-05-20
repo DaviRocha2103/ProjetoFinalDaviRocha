@@ -16,19 +16,26 @@
     </head>
     <body>
         <header>
-            <form action="buscarProdutos" method="get">
+            
             <div class="pesquisa">
+                <form action="buscarProdutos" method="get">
                 <input type="text" class="search-txt" placeholder="Pesquisar">
-                <a href="./index" class="searchbtn">
-                <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+                <button class="searchbtn"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;" id="ico"></i></button>
                 </a>
+                 </form>
             </div>
-            </form>
+           
             <div >
                 <img id="logo" src="./assets/logo.png" alt=""/>
             </div>
             <div class="barra">
                 <i  class="fa-solid fa-bars" style="color: #000000;"></i>
+            </div>
+            <div class="user">
+                <i class="fa-solid fa-user" style="color: #000000;"></i>
+            </div>
+            <div class="cart">
+                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
             </div>
             <div class="container container-categorias">
                     <c:forEach items="${categorias}" var="categoria" >

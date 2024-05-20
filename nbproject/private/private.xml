@@ -3,15 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Senai/Desktop/dvskts/ProjetoFinalDaviRocha/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Senai/Desktop/dvskts/ProjetoFinalDaviRocha/web/WEB-INF/jsp/produto.jsp</file>
-            <file>file:/C:/Users/Senai/Desktop/dvskts/ProjetoFinalDaviRocha/src/java/controller/ProdutosController.java</file>
-            <file>file:/C:/Users/Senai/Desktop/dvskts/ProjetoFinalDaviRocha/src/java/model/dao/ProdutosDAO.java</file>
-            <file>file:/C:/Users/Senai/Desktop/dvskts/ProjetoFinalDaviRocha/src/java/model/bean/ProdutosDTO.java</file>
-            <file>file:/C:/Users/Senai/Desktop/dvskts/ProjetoFinalDaviRocha/web/WEB-INF/jsp/cadastro.jsp</file>
-            <file>file:/C:/Users/Senai/Desktop/dvskts/ProjetoFinalDaviRocha/web/WEB-INF/jsp/cadastroProdutos.jsp</file>
-            <file>file:/C:/Users/Senai/Desktop/dvskts/ProjetoFinalDaviRocha/src/java/controller/ClienteController.java</file>
-            <file>file:/C:/Users/Senai/Desktop/dvskts/ProjetoFinalDaviRocha/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/web/style/index.css</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/web/style/login.css</file>
+            <file>file:/C:/Users/Usuario/Desktop/dvskts/ProjetoFinalDaviRocha/web/style/header.css</file>
         </group>
     </open-files>
 </project-private>
