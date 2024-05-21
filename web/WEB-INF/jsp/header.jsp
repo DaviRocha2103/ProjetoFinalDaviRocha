@@ -40,7 +40,7 @@
             <div class="container container-categorias">
                     <c:forEach items="${categorias}" var="categoria" >
                         <div class="categoria">
-                            <a href="./buscarPodutos?cat=${categoria.idCategoria}&busca=">${categoria.nome}</a>
+                            <a href="./buscar-produtos?cat=${categoria.idCategoria}&busca=">${categoria.nome}</a>
                         </div>
                     </c:forEach>
                 </div>

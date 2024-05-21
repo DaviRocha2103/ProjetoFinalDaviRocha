@@ -21,7 +21,7 @@
                     <div class="card card-custom">
                         <div class="card-body">
                             <div class="imagemProduto">
-                                <img src="data:image/jpg;base64,${produto.imagemBase64}" alt="${produto.nome}">
+                           <img src="${produto.imagem}" alt="${produto.nome}">
                             </div>
                             <h5 class="card-title">${produto.nome}</h5>
                             <p class="card-text">Valor: R$ ${produto.preco}</p>

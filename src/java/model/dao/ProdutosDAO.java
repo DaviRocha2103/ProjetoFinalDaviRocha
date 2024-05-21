@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
+
 import model.bean.ProdutosDTO;
 /**
  *
@@ -38,6 +38,7 @@ public class ProdutosDAO {
                 produto.setDescricao(rs.getString("descricao"));
                 produto.setPreco(rs.getFloat("preco"));
                 produto.setQuantidade(rs.getInt("quantidade"));
+                produto.setImagem(rs.getString("imagem"));
                 produtos.add(produto);
             }
             rs.close();
@@ -60,7 +61,7 @@ public class ProdutosDAO {
             stmt.setString(3, produtos.getDescricao());
             stmt.setFloat(4, produtos.getPreco());
             stmt.setInt(5, produtos.getQuantidade());
-            stmt.setBytes(6, produtos.getImagem());
+            stmt.setString(6, produtos.getImagem());
             stmt.executeUpdate();
 
             stmt.close();
@@ -91,7 +92,7 @@ public class ProdutosDAO {
                 prod.setNome(rs.getString("nome"));
                 prod.setDescricao(rs.getString("descricao"));
                 prod.setPreco(rs.getFloat("preco"));
-                prod.setImagem(rs.getBytes("imagem"));
+                prod.setImagem(rs.getString("imagem"));
                 
                 resultadoBusca.add(prod);
             }
@@ -121,7 +122,7 @@ public class ProdutosDAO {
                 prod.setCategoria(rs.getInt("categoria"));
                 prod.setDescricao(rs.getString("descricao"));
                 prod.setPreco(rs.getFloat("preco"));
-                prod.setImagem(rs.getBytes("imagem"));
+                prod.setImagem(rs.getString("imagem"));
                 
                 resultadoBusca.add(prod);
             }

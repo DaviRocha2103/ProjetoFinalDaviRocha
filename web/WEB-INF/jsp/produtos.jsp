@@ -13,7 +13,7 @@
         <main>
             <c:forEach items="${produtos}" var="produto">
                 <div class="card" style="width: 18rem;">
-                    <img src="data:image/jpg;base64,${produto.imagemBase64}" alt="${produto.nome}">
+                    <img src="${produto.imagem}" alt="${produto.nome}">
                     <div class="card-body">
                       <h5 class="card-title">${produto.nome}</h5>
                       <p class="card-text">${produto.descricao}</p>
