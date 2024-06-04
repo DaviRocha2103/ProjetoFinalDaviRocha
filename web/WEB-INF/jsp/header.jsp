@@ -25,16 +25,12 @@
                  </form>
             </div>
            
-            <div >
+            <div class="logo">
                 <img id="logo" src="./assets/logo.png" alt=""/>
             </div>
-            <div class="barra">
+            <div class="icons">
                 <i  class="fa-solid fa-bars" style="color: #000000;"></i>
-            </div>
-            <div class="user">
                 <i class="fa-solid fa-user" style="color: #000000;"></i>
-            </div>
-            <div class="cart">
                 <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
             </div>
             <div class="container container-categorias">

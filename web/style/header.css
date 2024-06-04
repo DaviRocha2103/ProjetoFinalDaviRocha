@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
 } 
-    
+
 
 
 .fa-magnifying-glass{
@@ -17,7 +17,7 @@ header{
     background-size: cover;
     background-position: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: relative;
     align-items: flex-start;
     justify-content: center;
@@ -46,44 +46,44 @@ header{
     font-size: 15px;
     line-height: 40px;
     margin-top: 20px;
-    
+
 }
 
 .searchbtn{
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-position: relative;
-bottom: 1.6vw;;
-left: 240px;
-color: transparent;
-background-color: transparent;
-border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 1.6vw;;
+    left: 240px;
+    color: transparent;
+    background-color: transparent;
+    border: none;
+}
+
+.logo {
+    width: 200px;
 }
 
 #logo{
     position: relative;
-    left: 410%;
-    margin-top: 68px;
+
 }
 
 .barra{ 
     position: relative;
-    top: -85%;
-    left: 4%;
+
 }
 
 .user{ 
     position: relative;
-    top: -100%;
-    left: 95%;
+
 }
 
 .cart{ 
     position: relative;
-    top: -115%;
-    left: 90%;
+
 }
 
 .fa-bars{

@@ -4,6 +4,8 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="./style/index.css" rel="stylesheet" type="text/css"/>
@@ -13,51 +15,50 @@
     </head>
 
     <body>
-            <jsp:include page="header.jsp"></jsp:include>
-            
-                <div class="carrosel">
-                    <div id="carouselExampleFade" class="carousel slide carousel-fade">
-  <div class="carousel-inner">
-        <div class="carousel-item active">
-        <img src="./assets/cjota.png" class="d-block w-100" alt="sla">
-        </div>
-        <div class="carousel-item">
-        <img src="./assets/veigh.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-        <img src="./assets/ryu.png" class="d-block w-100" alt="...">
-        </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-        </button>
-        </div>
+        <jsp:include page="header.jsp"></jsp:include>
+
+            <div class="carrosel">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./assets/cjota.png" class="d-block w-100" alt="sla">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/veigh.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/ryu.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-        <h1 class="my-4">Listagem de Produtos</h1>
-        <div class="row">
+            </div>
+            <h1 class="my-4">Listagem de Produtos</h1>
+            <div class="row">
             <c:forEach var="produto" items="${produtos}">
                 <div class="col-md-4 mb-3">
                     <div class="card card-custom">
                         <div class="card-body">
                             <div class="imagemProduto">
-                           <img src="${produto.imagem}" alt="${produto.nome}">
+                                <img src="${produto.imagem}" alt="${produto.nome}">
                             </div>
                             <h5 class="card-title">${produto.nome}</h5>
-                            <p class="card-text">Valor: R$ ${produto.preco}</p>
-                        </div>
+                            <p class="card-text" style="color: #3169F9;">R$${produto.preco}</p> 
+                             <button class="addCart"><i class="fa-solid fa-bag-shopping" style="color: #000000;"></i></button>
+                        </div> 
                     </div>
                 </div>
             </c:forEach>
         </div>
-    
+
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </html>
-    
+
 

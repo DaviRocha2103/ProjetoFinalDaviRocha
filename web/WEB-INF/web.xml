@@ -20,6 +20,10 @@
         <servlet-name>ProdutosController</servlet-name>
         <servlet-class>controller.ProdutosController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProdController</servlet-name>
+        <servlet-class>controller.ProdController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -48,7 +52,6 @@
         <servlet-name>ProdutosController</servlet-name>
         <url-pattern>/Produtos</url-pattern>
     </servlet-mapping>
-
     <servlet-mapping>
         <servlet-name>ProdutosController</servlet-name>
         <url-pattern>/cadastroProduto</url-pattern>
@@ -57,11 +60,14 @@
         <servlet-name>ProdutosController</servlet-name>
         <url-pattern>/cadastroP</url-pattern>
     </servlet-mapping>
-        <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ProdutosController</servlet-name>
         <url-pattern>/insert</url-pattern>
     </servlet-mapping>
-   
+    <servlet-mapping>
+        <servlet-name>ProdController</servlet-name>
+        <url-pattern>/Produto</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
