@@ -1,0 +1,94 @@
+.linha{
+    height: 2px;
+    background-color: black;
+    width: 100%;
+}
+
+.esquerda{
+    display: flex;
+    flex-direction: column;
+}
+.esquerda img{
+        max-width: 800px;
+    height: 825px;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 132px);
+    gap: 50px;
+}
+
+.direita h1{
+    font-family: 'Jomolhari', sans-serif;
+    font-size: 45px;
+    margin-top: 40px;
+}
+
+.direita h2{
+    font-size: 65px;
+    margin-top: 30px;
+    color: #0056b3;
+}
+
+.tamQ{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tamQ h4{
+    font-family: 'Jomolhari', sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.tamQ h3{
+    font-family: 'Jomolhari', sans-serif;
+    font-size: 20px;
+    margin-left: 200px;
+}
+
+.form-control{
+    display: block;
+    width: 28%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: 0.375rem 2.1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 5.5;
+    color: #ffffff;
+    background-color: #000;
+    background-clip: padding-box;
+    border: 1px solid #ffffff;
+    border-radius: 10.25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.Qnt{
+    -moz-appearance: textfield;
+    display: block;
+    width: 14%;
+    height: calc(0.5em + 0.75rem + 2px);
+    padding: 0.375rem 2.1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 5.5;
+    color: #ffffff;
+    background-color: #000;
+    background-clip: padding-box;
+    border: 1px solid #ffffff;
+    border-radius: 11.25rem;
+    margin-left: 40%;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.Qnt::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+.Req{
+    display: flex;
+    justify-content: space-around;
+}
