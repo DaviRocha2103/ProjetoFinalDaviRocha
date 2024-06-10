@@ -25,7 +25,7 @@
 
             <div class="direita">
                 <h1>Essential Black</h1>
-                <h2>R$ 150,00</h2>
+                <h2 class="prec">R$ 150,00</h2>
                 <div class="tamQ">
                 <h4>Tamanho</h4>
                 <h3>Quantidade</h3>
@@ -38,9 +38,16 @@
                     <option value="4">GG</option>
                     <option value="5">XG</option>
                 </select>
-                <input type="number" step="1" class="Qnt" id="quantidade" name="quantidade" required>
+                <input type="number" step="1" class="Qnt" id="quantidade" name="quantidade" required required onchange="forceStartsWithOne(this)">
+                
+                </div>
+                <div class="bot">
+                <button class="but" type="submit">Adicionar Ao Carrinho</button>
             </div>
+                <div class="traco"></div>
+                <h2 class="des">Descrição</h2>
             </div>
-        </div>
+            
     </body>
+    <script src="./js/inputnum.js"></script>
 </html>
