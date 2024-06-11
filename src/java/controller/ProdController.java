@@ -12,6 +12,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.ProdutosDTO;
+import model.dao.ProdutosDAO;
 
 /**
  *
@@ -64,7 +66,16 @@ public class ProdController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String url = request.getServletPath();
+        if (url.equals("/Produto")){
+            String  nextPage = "/WEB-INF/jsp/detalhes.jsp";
+            int idProduto = Integer.parseInt(request.getParameter("unico"));
+            ProdutosDAO prodDAO = new ProdutosDAO();
+            ProdutosDTO prod = prodDAO.Produto(idProduto);
+            request.setAttribute("produto", prod);
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+            dispatcher.forward(request, response);
+      }
     }
 
     /**

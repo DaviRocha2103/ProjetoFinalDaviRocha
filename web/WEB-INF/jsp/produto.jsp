@@ -20,12 +20,12 @@
         <div class="container">
 
             <div class="esquerda">
-                <img src="./assets/essential-f5ff0227594b1869ad17147559334464-1024-1024.jpg" alt="">
+                <img src="${produto.imagem}" alt="">
             </div>
 
             <div class="direita">
-                <h1>Essential Black</h1>
-                <h2 class="prec">R$ 150,00</h2>
+                <h1>${produto.nome}</h1>
+                <h2 class="prec">${produto.preco}</h2>
                 <div class="tamQ">
                 <h4>Tamanho</h4>
                 <h3>Quantidade</h3>

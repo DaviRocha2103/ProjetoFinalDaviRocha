@@ -51,7 +51,7 @@
                             </div>
                             <h5 class="card-title">${produto.nome}</h5>
                             <p class="card-text" style="color: #3169F9;">R$${produto.preco}</p> 
-                             <button class="addCart"><i class="fa-solid fa-bag-shopping" style="color: #000000;"></i></button>
+                            <a class="addCart" href="./Produto?unico=${produto.idProduto}"><i class="fa-solid fa-bag-shopping" style="color: #000000;"></i> </a>
                         </div> 
                     </div>
                 </div>
