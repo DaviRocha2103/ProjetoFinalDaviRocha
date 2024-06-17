@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="./style/pgProduto.css" rel="stylesheet" type="text/css"/>
-        <title>${produto.nome}</title>
+        <title>${produtos.nome}</title>
     </head>
     <body>
         <header>
@@ -18,14 +18,14 @@
         </header>
         <div class="linha"></div>
         <div class="container">
-
+            
             <div class="esquerda">
-                <img src="${produto.imagem}" alt="">
+                <img src="${produtos.imagem}" alt="">
             </div>
 
             <div class="direita">
-                <h1>${produto.nome}</h1>
-                <h2 class="prec">${produto.preco}</h2>
+                <h1>${produtos.nome}</h1>
+                <h2 class="prec">${produtos.preco}</h2>
                 <div class="tamQ">
                 <h4>Tamanho</h4>
                 <h3>Quantidade</h3>
@@ -48,6 +48,7 @@
                 <h2 class="des">Descrição</h2>
             </div>
             
+        </div>  
     </body>
     <script src="./js/inputnum.js"></script>
 </html>

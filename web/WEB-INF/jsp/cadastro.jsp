@@ -35,15 +35,15 @@
         </div>
         <div class="container-user">
             <label for="email">E-mail</label>
-            <input type="text" id="email" name="email" class="form-control"  autocomplete="off">
+            <input type="text" id="email" name="email" class="form-control"  autocomplete="off" required>
         </div>
         <div class="container-user">
             <label for="cpf">Cpf</label>
-            <input type="text" id="cpf" name="cpf" class="form-control"  autocomplete="off">
+            <input type="text" id="cpf" name="cpf" class="form-control"  autocomplete="off" required>
         </div>
         <div class="container-user">
             <label for="tel">Telefone</label>
-            <input type="text" id="tel" name="telefone" class="form-control"  autocomplete="off">
+            <input type="text" id="tel" name="telefone" class="form-control"  autocomplete="off" required>
         </div>
 
         </div>

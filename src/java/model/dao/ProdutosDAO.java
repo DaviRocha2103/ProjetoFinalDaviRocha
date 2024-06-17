@@ -131,5 +131,37 @@ public class ProdutosDAO {
         }
         return resultadoBusca;
     }
-     
+     public ProdutosDTO Produto(int unico) {
+        ProdutosDTO produto = new ProdutosDTO();
+        
+        Connection conexao = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conexao = Conexao.conectar();
+            stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE idProduto =?");
+            stmt.setInt(1, unico);
+            
+            rs = stmt.executeQuery();
+
+           if (rs.next()) {
+                
+                produto.setIdProduto(rs.getInt("idProduto"));
+                produto.setNome(rs.getString("nome"));
+                produto.setCategoria(rs.getInt("categoria"));
+                produto.setDescricao(rs.getString("descricao"));
+                produto.setPreco(rs.getFloat("preco"));
+                produto.setQuantidade(rs.getInt("quantidade"));
+                produto.setImagem(rs.getString("image"));
+                
+            }           
+            rs.close();
+            stmt.close();
+            conexao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return produto;
+    }
 }

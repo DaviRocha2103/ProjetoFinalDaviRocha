@@ -7,6 +7,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +21,7 @@ import model.dao.ProdutosDAO;
  * @author Senai
  */
 public class ProdController extends HttpServlet {
-
+       ProdutosDAO produtosDAO = new ProdutosDAO();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -35,6 +36,9 @@ public class ProdController extends HttpServlet {
         String url = request.getServletPath();
         if (url.equals("/Produto")) {
             String nextPage = "/WEB-INF/jsp/produto.jsp";
+             int idProduto = (Integer.parseInt(request.getParameter("unico")));
+            ProdutosDTO produto = produtosDAO.Produto(idProduto);
+            request.setAttribute("produtos", produto);
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
     }
@@ -67,7 +71,7 @@ public class ProdController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
-        if (url.equals("/Produto")){
+        /*if (url.equals("/Produto")){
             String  nextPage = "/WEB-INF/jsp/detalhes.jsp";
             int idProduto = Integer.parseInt(request.getParameter("unico"));
             ProdutosDAO prodDAO = new ProdutosDAO();
@@ -75,7 +79,7 @@ public class ProdController extends HttpServlet {
             request.setAttribute("produto", prod);
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
-      }
+      }*/
     }
 
     /**
