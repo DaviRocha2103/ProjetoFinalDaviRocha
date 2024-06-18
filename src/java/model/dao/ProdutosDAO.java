@@ -153,7 +153,7 @@ public class ProdutosDAO {
                 produto.setDescricao(rs.getString("descricao"));
                 produto.setPreco(rs.getFloat("preco"));
                 produto.setQuantidade(rs.getInt("quantidade"));
-                produto.setImagem(rs.getString("image"));
+                produto.setImagem(rs.getString("imagem"));
                 
             }           
             rs.close();

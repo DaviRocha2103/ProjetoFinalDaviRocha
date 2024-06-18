@@ -1,9 +1,4 @@
-<%-- 
-    Document   : produto
-    Created on : 07/05/2024, 14:47:41
-    Author     : Senai
---%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,10 +13,9 @@
         </header>
         <div class="linha"></div>
         <div class="container">
-            
-            <div class="esquerda">
-                <img src="${produtos.imagem}" alt="">
-            </div>
+                <div class="esquerda">
+                    <img src="${produtos.imagem}" alt="">
+                </div>
 
             <div class="direita">
                 <h1>${produtos.nome}</h1>

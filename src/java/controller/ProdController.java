@@ -5,14 +5,20 @@
  */
 package controller;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import model.bean.ProdutosDTO;
 import model.dao.ProdutosDAO;
 
@@ -41,8 +47,7 @@ public class ProdController extends HttpServlet {
             request.setAttribute("produtos", produto);
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
-    }
-    }
+    }    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -70,16 +75,7 @@ public class ProdController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = request.getServletPath();
-        /*if (url.equals("/Produto")){
-            String  nextPage = "/WEB-INF/jsp/detalhes.jsp";
-            int idProduto = Integer.parseInt(request.getParameter("unico"));
-            ProdutosDAO prodDAO = new ProdutosDAO();
-            ProdutosDTO prod = prodDAO.Produto(idProduto);
-            request.setAttribute("produto", prod);
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-            dispatcher.forward(request, response);
-      }*/
+       
     }
 
     /**

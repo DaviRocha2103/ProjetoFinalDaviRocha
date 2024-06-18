@@ -7,9 +7,10 @@
 .esquerda{
     display: flex;
     flex-direction: column;
+    
 }
 .esquerda img{
-        max-width: 800px;
+    max-width: 800px;
     height: 825px;
 }
 
