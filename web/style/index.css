@@ -1,4 +1,4 @@
-*{
+body{
     margin: 0;
     padding: 0;
     width: 100%;
@@ -67,13 +67,14 @@
     width: 1000px;
 }
 
-.row {
+.cartao-produto{
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: 0px;
     margin-left: -15px;
+    width: auto;
 }
 
 .texto {
@@ -95,6 +96,6 @@
     font-size: 40px;
 }
 
-.row div .card{
+.cartao-produto div .card{
     background-color: #aaa9a9;
 }

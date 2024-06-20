@@ -40,6 +40,7 @@
             </div>
                 <div class="traco"></div>
                 <h2 class="des">Descrição</h2>
+                <h3>${produtos.descricao}</h3>
             </div>
             
         </div>  

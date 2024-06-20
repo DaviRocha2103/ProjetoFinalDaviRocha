@@ -28,14 +28,15 @@ header{
     position: absolute;
     left: 10%;
     background: black;
-    height: 22px;
-    padding: 12px;
+    height: 40px;
     border-radius: 40px;
     display: flex;
     justify-content: space-between;
     align-content: space-between;
     align-items: center;
-    width: 260px;
+    width: 270px;
+    padding: 0;
+    margin: 0;
 }
 
 .search-txt{
@@ -47,7 +48,7 @@ header{
     font-size: 15px;
     line-height: 40px;
     margin-top: 20px;
-
+    margin-left: 5%;
 }
 
 .searchbtn{

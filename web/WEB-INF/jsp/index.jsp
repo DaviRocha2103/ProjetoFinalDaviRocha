@@ -15,7 +15,7 @@
     </head>
 
     <body>
-        <jsp:include page="header.jsp"></jsp:include>
+        <jsp:include page="headerC.jsp"></jsp:include>
 
             <div class="carrosel">
                 <div id="carouselExampleFade" class="carousel slide carousel-fade">

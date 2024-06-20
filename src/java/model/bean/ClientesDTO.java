@@ -11,7 +11,7 @@ package model.bean;
  * @author Senai
  */
 public class ClientesDTO {
-    private int idCliente;
+    private static int idCliente;
     private String nome;
     private String senha;
     private String email;
