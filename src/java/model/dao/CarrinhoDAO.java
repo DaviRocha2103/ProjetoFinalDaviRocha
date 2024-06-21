@@ -120,7 +120,7 @@ public class CarrinhoDAO {
         }
     }
 
-    public CarrinhoDTO validação(CarrinhoDTO produto) {
+    public CarrinhoDTO validacao(CarrinhoDTO produto) {
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
@@ -146,7 +146,7 @@ public class CarrinhoDAO {
         return produto;
     }
 
-    public Float Total(int idCliente) {
+    public Float Total(int idClientes) {
         Float total_carrinho = null;
 
         try {
@@ -154,7 +154,7 @@ public class CarrinhoDAO {
             PreparedStatement stmt = null;
             ResultSet rs = null;
 
-            stmt = conexao.prepareStatement("SELECT SUM(total) as total_soma FROM carrinho WHERE idClientes = ?");
+            stmt = conexao.prepareStatement("SELECT SUM(total) as total_soma FROM carrinho WHERE idCliente = ?");
             stmt.setInt(1, ClientesDTO.getIdCliente());
             rs = stmt.executeQuery();
 
@@ -171,7 +171,7 @@ public class CarrinhoDAO {
         return total_carrinho;
     }
 
-    public void limparCarrinho(ClientesDTO c) {
+    public void clear(ClientesDTO c) {
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;

@@ -25,7 +25,7 @@
             </div>
            
             <div class="logo">
-                <img id="logo" src="./assets/logo.png" alt=""/>
+             <a href="./index"><img id="logo" src="./assets/logo.png" alt=""/></a>
             </div>
             <div class="barra">
                 <i  class="fa-solid fa-bars" style="color: #000000;"></i>
@@ -34,7 +34,7 @@
                 <i class="fa-solid fa-user" style="color: #000000;"></i>
                 </div>
             <div class="cart">
-                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+               <a href="./Carrinho"><i class="fa-solid fa-cart-shopping" style="color: #000000;"></i></a>
             </div>
             <div class="container-categorias">
                     <c:forEach items="${categorias}" var="categoria" >

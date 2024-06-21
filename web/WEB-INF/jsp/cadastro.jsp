@@ -35,7 +35,7 @@
         </div>
         <div class="container-user">
             <label for="email">E-mail</label>
-            <input type="text" id="email" name="email" class="form-control"  autocomplete="off" required>
+            <input type="email" id="email" name="email" class="form-control"  autocomplete="off" required>
         </div>
         <div class="container-user">
             <label for="cpf">Cpf</label>
@@ -54,6 +54,6 @@
             </form>
             </div>
         </main>
-         <script src="./js/cadastro.js" type="text/javascript"></script>
     </body>
+    <script src="js/validaçãoCadastro.js" type="text/javascript"></script>
 </html>

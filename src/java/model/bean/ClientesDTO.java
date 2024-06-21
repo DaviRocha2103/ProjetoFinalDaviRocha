@@ -22,8 +22,7 @@ public class ClientesDTO {
     public ClientesDTO() {
     }
 
-    public ClientesDTO(int idCliente, String nome, String senha, String email, String cpf, String telefone, int status) {
-        this.idCliente = idCliente;
+    public ClientesDTO(String nome, String senha, String email, String cpf, String telefone, int status) {
         this.nome = nome;
         this.senha = senha;
         this.email = email;
@@ -32,12 +31,12 @@ public class ClientesDTO {
         this.status = status;
     }
 
-    public int getIdCliente() {
+    public static int getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
+    public static void setIdCliente(int idCliente) {
+        ClientesDTO.idCliente = idCliente;
     }
 
     public String getNome() {
