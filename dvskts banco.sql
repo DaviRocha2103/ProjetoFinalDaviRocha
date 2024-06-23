@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS dvskts_1;
+CREATE DATABASE dvskts_1;
 USE dvskts_1;
 
 CREATE TABLE clientes (
